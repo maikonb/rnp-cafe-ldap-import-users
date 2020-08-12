@@ -1,4 +1,7 @@
 const sequelize  = require('../sequelize');
+const axios = require('axios');
+const config =require('../config');
+
 
 async function test_db_connection() {
   try {
@@ -12,7 +15,16 @@ async function test_db_connection() {
 }
 
 async function test_api() {
-  console.log("Conexao com o API LDAP: OK");
+  
+  try {
+    let res = await axios.get(`${config.api_url}/test-api`);
+    console.log("Conexao com o API LDAP: OK");
+  } 
+  catch (error) {
+    console.error('Conexao com o API LDAP: Erro');
+    console.error('Error:', error);
+  }
+
 }
 
 (async () => {

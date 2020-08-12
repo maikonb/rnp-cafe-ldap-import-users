@@ -18,10 +18,9 @@ async function loadUsers(users=[]) {
   for (let i=0; i<users.length; i++) {
     let user_data = users[i].dataValues;
     try {
-      let res = await axios.post(config.api_url, user_data);
+      let res = await axios.post(`${config.api_url}/users`, user_data);
       if (res.status == 201)
-        console.log(`Criado [ ${i} / ${users.length}] - ID ${user_data.id}`);
-      console.log(res.status);
+        console.log(`Criado [ ${i+1} / ${users.length}] - ID ${user_data.id}`);
     }
     catch(error) {
       console.log("Erro no usuario: ", i);
