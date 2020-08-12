@@ -10,9 +10,11 @@ module.exports = new Sequelize({
   dialect: 'mysql',
   storage: ':memory:',
 
-  logging: console.log,
+  //logging: console.log,
 
   define: {
-    freezeTableName: true
-  }
+    freezeTableName: true,
+  },
+  logging: false,
+
 });
