@@ -34,7 +34,8 @@ const sequelize  = require('./sequelize');
     process.exit(0); // OK
   } 
   catch (error) {
-    console.error('Falha no carregamento dos dados:', error);
+    console.error('Falha no carregamento dos dados:');
+    console.error(error);
   }
 
 })();

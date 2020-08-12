@@ -7,6 +7,7 @@ const config = {
   database:   process.env.MYSQL_DATABASE,
   host:       process.env.MYSQL_HOST,
   dialect:    "mysql",
+  api_url:    process.env.API_LDAP_URL,
 }
 
 module.exports = config;
